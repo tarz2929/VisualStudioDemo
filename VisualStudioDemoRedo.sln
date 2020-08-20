@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29920.165
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualStudioDemoRedo", "VisualStudioDemoRedo\VisualStudioDemoRedo.csproj", "{287EC8BF-FEC9-4B49-BDB0-5667D9E934E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{287EC8BF-FEC9-4B49-BDB0-5667D9E934E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{287EC8BF-FEC9-4B49-BDB0-5667D9E934E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{287EC8BF-FEC9-4B49-BDB0-5667D9E934E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{287EC8BF-FEC9-4B49-BDB0-5667D9E934E5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {59F0C008-C8D3-477D-9DF6-EF11D2744E22}
+	EndGlobalSection
+EndGlobal
