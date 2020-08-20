@@ -28,16 +28,13 @@ namespace VisualStudioDemoRedo
                 {
                     int row, column, value;
 
-                    Console.Write("Please enter a row number: ");
-                    row = int.Parse(Console.ReadLine());
+                    row = GetValidInt("Please enter a row number: ", 0, 2);
 
-                    Console.Write("Please enter a column number: ");
-                    column = int.Parse(Console.ReadLine());
+                    column = GetValidInt("Please enter a column number: ", 0, 2);
 
-                    Console.Write("Please enter a new value: ");
-                    value = int.Parse(Console.ReadLine());
+                    value = GetValidInt("Please enter a value: ", int.MinValue, int.MaxValue);
 
-                    // Modify the array
+                    theArray[column, row] = value;
                 }
             } while (userInput.ToLower() != "exit");
         }
@@ -54,6 +51,31 @@ namespace VisualStudioDemoRedo
                 }
                 Console.WriteLine("\n-----");
             }
+        }
+
+        static int GetValidInt(string prompt, int min, int max)
+        {
+            bool valid = false;
+            int userInput = -1;
+            do
+            {
+                Console.Write(prompt);
+                try
+                {
+                    userInput = int.Parse(Console.ReadLine());
+                    if (userInput < min || userInput > max)
+                    {
+                        throw new Exception("Input was outside of the bounds of the array");
+                    }
+                    valid = true;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("ERROR: " + ex.Message);
+                    Console.WriteLine("Please try again.");
+                }
+            } while (!valid);
+            return userInput;
         }
     }
 }
