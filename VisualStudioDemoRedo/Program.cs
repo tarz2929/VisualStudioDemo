@@ -7,13 +7,14 @@ namespace VisualStudioDemoRedo
         static void Main(string[] args)
         {
             int[] myArrayOne = { 42, 12, 7, 33, 5, 3 };
-            // Clone() will create a copy of the array, as opposed to returning the memory address of the original.
-            int[] myArrayTwo = (int[])myArrayOne.Clone();
-            //int[] myArrayTwo = myArrayOne;
 
-            myArrayTwo[3] = 100;
+            // As memory address references, the original array is passed into the method and can be modified therein.
+            ModifyArray(myArrayOne);
 
-
+        }
+        static void ModifyArray(int[] theArray)
+        {
+            theArray[2] = 5;
         }
 
 
