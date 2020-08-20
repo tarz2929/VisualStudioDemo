@@ -6,70 +6,41 @@ namespace VisualStudioDemoRedo
     {
         static void Main(string[] args)
         {
-            /* Code Borrowed from Warren */
+            int[] arrayOfNumbers = { 9, 88, 40, 44, 78, 26, 1, 90 };
+            int[] oddNumbers = new int[8], evenNumbers = new int[8];
+            int oddCount = 0, evenCount = 0;
 
-            // Prompt the user.
-            Console.WriteLine("Please type: (add/subtract/exit)");
-            string command; // Declare a variable.
-            // Accept commands.
-            while ((command = Console.ReadLine()) != "exit")
-            {
-                int result;
-                if (command == "add")
+            // For each of the numbers in our array of numbers
+            for (int i = 0; i < arrayOfNumbers.Length; i++)
+            { 
+                // If the number is even (remainder of division by 2 is 0)
+                if (arrayOfNumbers[i] % 2 == 0)
                 {
-                    Console.WriteLine("Enter first number to add:");
-                    int firstNum = CollectIntFromUser();
-                    Console.WriteLine("Enter second number to add:");
-                    int secondNum = CollectIntFromUser();
-                    result = Addition(firstNum, secondNum);
-                    Console.WriteLine("The result is: {0}", result);
+                    // Add it to the even array and increase our count of even numbers
+                    evenNumbers[evenCount] = arrayOfNumbers[i];
+                    evenCount++;
                 }
-                else if (command == "subtract")
-                {
-                    Console.WriteLine("Enter first number to subtract:");
-                    int firstNum = CollectIntFromUser();
-                    Console.WriteLine("Enter second number to subtract:");
-                    int secondNum = CollectIntFromUser();
-                    result = Subtraction(firstNum, secondNum);
-                    Console.WriteLine("The result is: {0}", result);
-                }
+                // If it's not even, it's odd
                 else
                 {
-                    Console.WriteLine("Invalid command, please try again.");
+                    // Add it to the odd array and increase our count of odd numbers
+                    oddNumbers[oddCount] = arrayOfNumbers[i];
+                    oddCount++;
                 }
-                Console.WriteLine("Please enter a command: (add/subtract/exit)");
-            } // End of the while loop.
-        }
+            }
 
-        static int Addition(int num1, int num2)
-        {
-            return num1 + num2;
-        }
-
-        static int Subtraction(int num1, int num2)
-        {
-            return num1 - num2;
-        }
-
-        static int CollectIntFromUser()
-        {
-            int intValue = 0;
-            bool error = true;
-            while (error == true)
+            Console.WriteLine("Evens:");
+            foreach(int number in evenNumbers)
             {
-                string userValue = Console.ReadLine();
-                try // Wrap potentially-failing code in a try - this will prevent an unhandled exception (fatal error for your program.)
-                {
-                    intValue = int.Parse(userValue); // Attempt to convert the string...
-                    error = false; // If we get here, we're good to return the int!
-                }
-                catch (Exception exception)
-                { // We use "catch" to decide what happens if the "try" has an error!
-                    Console.WriteLine("Invalid value entered. Please enter a number.");
-                    Console.WriteLine(exception.Message); // The exception has its own error message - helpful to know what is failing!
-                }
-            } // End of the while loop.
-            return intValue; // Ends execution of the method, and passes the value back.
+                Console.WriteLine(number);
+            }
+
+            Console.WriteLine("Odds:");
+            foreach (int number in oddNumbers)
+            {
+                Console.WriteLine(number);
+            }
+
         }
 
 
